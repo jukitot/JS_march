@@ -71,3 +71,29 @@ obj2.key1 = 1;
 console.log(obj1);
 console.log(obj2);
 
+let answer = +prompt('your age:');
+console.log(answer);
+if (answer > 18) {
+    document.write('<div>orange hub</div>')
+}else{
+    document.write('<div>cartoon hub</div>')
+}
+
+let ans = prompt('you`re more than 18?`');
+console.log(ans);
+if (ans ==='yes') {
+    document.write('<div>orange hub</div>')
+}else{
+    document.write('<div>cartoon hub</div>')
+}
+
+let color = 'yellow';
+if (color === 'green') {
+    console.log('go');
+}else if(color === 'yellow'){
+    console.log('wait');
+}else if(color === 'red'){
+    console.log('stop');
+}else{
+    console.log('????');
+}
