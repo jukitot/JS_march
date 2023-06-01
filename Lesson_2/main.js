@@ -111,3 +111,8 @@ switch (color) {
     default:
         console.log('????');
 }
+
+let answ = 'yes';
+console.log(answ === 'yes' || answ === 'Yes')
+
+let b = confirm('it is true?');
