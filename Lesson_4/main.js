@@ -30,9 +30,30 @@ let users = [
 fooIter(users);
 fooIter([34, 5029, 44, 298, 209]);
 
-function calc(a, b) {
-    let result = a + b;
+function calc(a, b, action) {
+    let result;
+    switch (action){
+        case '+':
+            result = a + b;
+            break;
+        case '-':
+            result = a - b;
+            break;
+        case '*':
+            result = a * b;
+            break;
+        case '/':
+            result = a / b;
+            break;
+
+    }
     return result;
 }
-let x = calc(10, 20);
+let x = calc(10, 20, '+');
+let y = calc(10, 20, '-');
+let z = calc(10, 20, '*');
+let r = calc(10, 20, '/');
 console.log(x);
+console.log(y);
+console.log(z);
+console.log(r);
