@@ -171,3 +171,9 @@ let copy = {...user23, skills:[...user23.skills]};
 console.log(copy);
 
 
+function foobarfunc(arr) {
+    let json = JSON.stringify(arr);
+    let array = JSON.parse(json);
+    return [...arr];
+}
+
