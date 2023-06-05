@@ -100,14 +100,19 @@ let user12 = {
     foobar() {
 
     },
-    wife: {}
+    wife: {
+        name: 'anna',
+        surname: 'popovich'
+    }
 }
 
-let {name, age, foobar, wife} = user12;
+let {name, age, foobar, wife, wife :{name: wifeName, surname: wifeSurname}} = user12;
 console.log(name);
 console.log(age);
 console.log(wife);
 console.log(foobar);
+console.log(wifeName);
+console.log(wifeSurname);
 
 let user22 = {
     name: 'kok',
@@ -121,3 +126,48 @@ let user22 = {
 let {age: age1, foobar: foobar1, name: name1, wife: wife1} = user22;
 console.log(age1);
 console.log(name1);
+
+function sus({name, age}){
+    console.log(name, age);
+    console.log(age);
+}
+
+sus({name:'oioi', age:23});
+
+let users = [
+    {name: 'vasya', age: 31, status: false},
+    {name: 'petya', age: 30, status: true},
+    {name: 'kolya', age: 29, status: true},
+    {name: 'olya', age: 28, status: false},
+    {name: 'max', age: 30, status: true},
+    {name: 'anya', age: 31, status: false},
+    {name: 'oleg', age: 28, status: false},
+    {name: 'andrey', age: 29, status: true},
+    {name: 'masha', age: 30, status: true},
+    {name: 'olya', age: 31, status: false},
+    {name: 'max', age: 31, status: true},
+];
+
+let [a, b, c, , m] = users;
+console.log(a);
+console.log(a.name);
+console.log(b);
+console.log(c);
+console.log(m);
+
+
+let user23 = {
+    name: 'sasha',
+    age: 23,
+    skills :[{title:'java', exp:10}, {title:'js', exp:2}]
+}
+let {name: name2, skills} = user23;
+console.log(name2);
+console.log(skills[0].title);
+
+console.log({...user23});
+
+let copy = {...user23, skills:[...user23.skills]};
+console.log(copy);
+
+
