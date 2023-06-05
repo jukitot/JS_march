@@ -46,3 +46,52 @@ console.log(phone
     .replaceAll('(', '')
     .replaceAll(')', '')
     .replaceAll('-', ''));
+
+let arr = [11, 12];
+arr.push(33);// add to end
+console.log(arr);
+
+arr.unshift(0);//add to start
+console.log(arr);
+
+console.log(arr.pop());//delete end
+console.log(arr);
+
+console.log(arr.shift());//delete start
+console.log(arr);
+
+let arr1 = [111, 222, 333, 444, 555];
+console.log(arr1.splice(1, 1));//delete from 1 to 1 index
+console.log(arr1);
+
+console.log(arr1.splice(1, 1, 'asd', 'rty'));//delete from 1 to 1 index
+console.log(arr1);
+
+console.log(arr1.reverse());
+
+console.log(arr1.indexOf('rty'));
+
+console.log(arr1.slice(1, 3));
+console.log(arr1);
+
+console.log(arr1.includes(444));
+
+//callback
+let users = [
+    {name: 'vasya', age: 31, status: false},
+    {name: 'petya', age: 30, status: true},
+    {name: 'kolya', age: 29, status: true},
+    {name: 'olya', age: 28, status: false},
+    {name: 'max', age: 30, status: true},
+    {name: 'anya', age: 31, status: false},
+    {name: 'oleg', age: 28, status: false},
+    {name: 'andrey', age: 29, status: true},
+    {name: 'masha', age: 30, status: true},
+    {name: 'olya', age: 31, status: false},
+    {name: 'max', age: 31, status: true},
+];
+
+users.forEach(user => {
+    console.log(user);
+});
+
