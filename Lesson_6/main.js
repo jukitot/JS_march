@@ -92,6 +92,28 @@ let users = [
 ];
 
 users.forEach(user => {
-    console.log(user);
-});
+    if (user.age > 30) {
+        user.isLoveOlive = true
+    }
 
+});
+ users.forEach(user => console.log(user));
+
+console.log(users.filter(value => value.age > 30));
+
+console.log(users.map(value => {
+    let newUser = value;
+    if (value.age > 30) {
+
+        newUser.isLoveOlive = true
+    }
+    return newUser
+}));
+
+let map1 = users.map(user => user.age);
+console.log(map1);
+
+let map = users.map(user => user);
+console.log(map);
+console.log(users);
+console.log(map === users);
