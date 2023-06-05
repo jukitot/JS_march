@@ -111,9 +111,37 @@ console.log(users.map(value => {
 }));
 
 let map1 = users.map(user => user.age);
+
 console.log(map1);
 
-let map = users.map(user => user);
+let map = users.map((user, index, array) =>{
+    let u = {...user}
+    u.id = index;
+    return u;
+})
+let map2 = users.map(user => user);
 console.log(map);
 console.log(users);
 console.log(map === users);
+
+users.sort((a, b) => {
+    console.log(a, b);
+})
+
+let sort = users.sort((a, b) => {
+    return a.age - b.age;
+});
+console.log(sort);
+
+console.log(users.sort((a, b) => {
+    return a.name.localeCompare(b.name)
+}));
+
+console.log(users.reduce((accumulator, user) => {
+    if (user.status) {
+        accumulator.tStatus.push(user)
+    } else {
+        accumulator.fStatus.push(user)
+    }
+    return accumulator;
+}, {tStatus: [], fStatus: []}));
