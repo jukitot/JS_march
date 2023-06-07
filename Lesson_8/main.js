@@ -71,4 +71,42 @@ let friend = {
     skills: ['java', 'js']
 }
 
-user.greeting.call(friend, ['heeey']);
+user.greeting.call(friend,'heeey');
+
+user.greeting.apply(friend, ['hek']);
+
+
+let greetingCopy = user.greeting.bind(friend);
+greetingCopy('lkdlkf');
+
+User1.prototype.foo = function () {
+    console.log('foo works');
+};
+
+User1.prototype.bar = 'whisky';
+
+let user1 = new User1('petya', 32, 'olya', 23);
+console.log(user1);
+user1.foo();
+
+console.log(user1.bar);
+
+console.log(user1);
+
+let user2 = {
+    id: 123,
+    name: 'sasha'
+}
+
+let user22 = Object.create(user2);
+console.log(user2);
+console.log(user22);
+console.log(user22.name);
+
+console.log(user22);
+console.log(user22.id);
+console.log(user22.name);
+console.log(user2.hasOwnProperty('id'));
+console.log(user22.__proto__);
+user22.id = 111;
+console.log(user22);
