@@ -110,3 +110,58 @@ console.log(user2.hasOwnProperty('id'));
 console.log(user22.__proto__);
 user22.id = 111;
 console.log(user22);
+
+class User_1 {
+    name = 'vasya';
+    age = 32;
+
+    constructor(name, age, skills) {
+        this.name = name;
+        this.age = age;
+        this.foo = function () {
+
+        }
+        this.skills = skills;
+    }
+
+    foobar() {
+        console.log(this);
+    }
+
+}
+
+console.log(User_1);
+
+class Customer_1 extends User_1 {
+    constructor(name, age, id) {
+        super(name, age);
+        this.id
+    }
+}
+
+let custom = new Customer_1('petya', 123, 222);
+console.log(custom.name);
+
+let Dog = class {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+}
+
+console.log(new Dog('bobik', 10));
+
+function Car(model, power) {
+    this.model = model;
+    this.power = power;
+}
+
+console.log(new Car('tesla', 120));
+
+function SuperCar(model, power, volume) {
+    Car.apply(this, arguments);
+    this.volume = volume;
+}
+
+console.log(new SuperCar('TeslaX', 120, 20));
