@@ -49,3 +49,26 @@ let array = new Array(10);
 
 let date = new Date();
 console.log(date);
+
+function User1(name, age, wifeName, wifeAge) {
+    this.name = name;
+    this.age = age;
+    this.greeting = function (msg){
+        console.log(`${msg} my name is ${this.name}`);
+    }
+
+    this.wife = {
+        wifeName,
+        wifeAge
+    }
+}
+let user = new User1('vasya', 22, 'anna', 29);
+user.greeting('halo!');
+console.log(user.wife);
+
+let friend = {
+    name: 'kolos',
+    skills: ['java', 'js']
+}
+
+user.greeting.call(friend, ['heeey']);
