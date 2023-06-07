@@ -1,6 +1,5 @@
-console.log('hello');
-function foobarfunc(arr) {
-    let json = JSON.stringify(arr);
-    let array = JSON.parse(json);
-    return [...arr];
+console.log('lesson_8');
+
+function User() {
+
 }
