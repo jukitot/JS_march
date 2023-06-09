@@ -60,3 +60,21 @@ btn.onclick = function () {
     }
     console.log(obj1);
 }
+
+let target = document.getElementsByClassName('target')[0];
+target.onmousemove = function (e){
+    console.log(e.clientX, e.clientY);
+    this.style.background = `rgb(${e.clientX},${e.clientY},${e.clientY+e.clientX})`
+};
+
+console.log(form1)
+let firstname = form1.firstname;
+firstname.addEventListener('input',function(e) {
+    console.log(this.value);
+    target.innerText = this.value;
+    console.log(e);
+});
+
+firstname.onkeydown = function (e) {
+    console.log(e);
+}
