@@ -82,7 +82,9 @@ async function requestUsers() {
 }
 requestUsers();
 
-fetch('https://jsonplaceholder.typicode.com/users').then(value => value.json()).then(value => {
+fetch('https://jsonplaceholder.typicode.com/users')
+    .then(value => value.json())
+    .then(value => {
     for (let item of value) {
         let htmlDivElement = document.createElement('div');
         htmlDivElement.innerText = item.name;
