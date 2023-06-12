@@ -36,3 +36,20 @@ fetch('https://jsonplaceholder.typicode.com/posts',//http method post
     })
     .then(response => response.json())
     .then(json => console.log(json));
+
+//delete
+
+fetch('https://jsonplaceholder.typicode.com/posts/1', {
+    method: 'DELETE',
+
+});
+
+//filter posts userID1(posts)
+fetch('https://jsonplaceholder.typicode.com/posts?userId=1')
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+
+//filter posts postID1(comments)
+fetch('https://jsonplaceholder.typicode.com/posts/1/comments')
+    .then((response) => response.json())
+    .then((json) => console.log(json));
