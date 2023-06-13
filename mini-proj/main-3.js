@@ -19,8 +19,6 @@ fetch(`https://jsonplaceholder.typicode.com/posts?postId=${postId}`)
                 let h2 = document.createElement('h2');
                 h2.innerText = `${item.body}`;
 
-
-
                 let button = document.createElement('button');
                 button.innerText = `Comments`;
 
@@ -29,16 +27,7 @@ fetch(`https://jsonplaceholder.typicode.com/posts?postId=${postId}`)
                         .then(value => value.json())
                         .then(value => {
                             for (let item of value) {
-                                console.log(item.id);
-
-
-
-                                console.log(item.id);
-                                console.log(item.name);
-
-
                                 let div = document.createElement('div');
-
 
                                 let h1 = document.createElement('h1');
                                 h1.innerText =`Id: ${item.id}`;
@@ -56,15 +45,9 @@ fetch(`https://jsonplaceholder.typicode.com/posts?postId=${postId}`)
                                 h3.innerText = `${item.body}`
                                 div.appendChild(h3)
 
-
                                 document.body.append(div);
-
                             }
-
-
-
                         })
-
                 }, {once: true})
                 div.appendChild(h1);
                 div.appendChild(h2);

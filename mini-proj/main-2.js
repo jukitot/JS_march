@@ -49,11 +49,8 @@ fetch('https://jsonplaceholder.typicode.com/users')
                         .then(value => value.json())
                         .then(value => {
                             for (let item of value) {
-                                console.log(item.id);
-
 
                                 let div = document.createElement('div');
-
 
                                 let h1 = document.createElement('h1');
                                 h1.innerText =`Title: ${item.title}`;
@@ -69,9 +66,6 @@ fetch('https://jsonplaceholder.typicode.com/users')
                                 document.body.append(div);
 
                             }
-
-
-
                         })
                 }, {once: true})
 

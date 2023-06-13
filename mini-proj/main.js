@@ -9,7 +9,6 @@ fetch('https://jsonplaceholder.typicode.com/users')
             let h2 = document.createElement('h2');
             h2.innerText =`Name: ${item.name}`;
 
-
             let button = document.createElement('button');
             button.innerText = `User details`;
 
