@@ -8,9 +8,6 @@ buttonMain.onclick = function (){
     location.href = `index.html`;
 }
 
-
-
-
 fetch(`https://jsonplaceholder.typicode.com/posts?postId=${postId}`)
     .then(value => value.json())
     .then(value => {
@@ -33,13 +30,23 @@ fetch(`https://jsonplaceholder.typicode.com/posts?postId=${postId}`)
 
                 let button = document.createElement('button');
                 button.innerText = `Comments`;
+                div.classList.add('info');
+
+                let container = document.getElementById('container');
 
                 button.addEventListener('click', function(event) {
                     fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
                         .then(value => value.json())
                         .then(value => {
+
+
+
+
+
                             for (let item of value) {
+
                                 let div = document.createElement('div');
+                                div.classList.add('block');
 
                                 let h1 = document.createElement('h1');
                                 h1.innerText =`Id: ${item.id}`;
@@ -57,12 +64,15 @@ fetch(`https://jsonplaceholder.typicode.com/posts?postId=${postId}`)
                                 h3.innerText = `${item.body}`
                                 div.appendChild(h3)
 
-                                document.body.append(div);
+                                container.appendChild(div);
+                                document.body.append(container);
 
 
                             }
                         })
-                }, {once: true})
+
+                }, {once: true}
+                )
                 div.appendChild(h1);
                 div.appendChild(h2);
                 div.appendChild(button);

@@ -42,16 +42,29 @@ fetch('https://jsonplaceholder.typicode.com/users')
                 a.innerText = `Site: ${item.website}`
                 a.href = `http://${item.website}`
 
+
                 let button = document.createElement('button');
                 button.innerText = `Post of current user`;
+                div.appendChild(h1);
+                div.appendChild(h2);
+                div.appendChild(h3)
+                div.appendChild(a);
+                // ////////////////////////
+                div.classList.add('info');
 
+
+                let container = document.getElementById('container');
+                //////////////////////
                 button.addEventListener('click', function(event) {
                     fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
                         .then(value => value.json())
                         .then(value => {
                             for (let item of value) {
 
+
                                 let div = document.createElement('div');
+                                /////////////////////
+                                div.classList.add('block');
 
                                 let h1 = document.createElement('h1');
                                 h1.innerText =`Title: ${item.title}`;
@@ -64,17 +77,16 @@ fetch('https://jsonplaceholder.typicode.com/users')
                                     location.href = `post-details.html?postId=${item.id}`;
                                 }
                                 div.appendChild(button);
-                                document.body.append(div);
+/////////////////////////////////////
+                                container.appendChild(div);
+                                document.body.append(container);
+
                             }
+
                         })
                 }, {once: true})
 
-                div.appendChild(h1);
-                div.appendChild(h2);
-                div.appendChild(h3)
-                div.appendChild(a);
                 div.appendChild(button);
-
                 document.body.append(div);
             }
         }
