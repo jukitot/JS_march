@@ -37,20 +37,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
 
                 let a = document.createElement('a');
                 a.innerText = `Site: ${item.website}`
-                a.href = `${item.website};`
-
-
-
-
-
-
-
-
-
-
-
-
-
+                a.href = `http://${item.website}`
 
 
 
