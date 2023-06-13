@@ -3,6 +3,15 @@ let url = new URL(window.location.href);
 let userId = parseInt(url.searchParams.get('userId'))
 console.log(userId);
 
+
+let buttonBack = document.getElementById('back');
+buttonBack.onclick = function (){
+    location.href = `index.html`;
+}
+
+
+
+
 fetch('https://jsonplaceholder.typicode.com/users')
     .then(value => value.json())
     .then(value => {

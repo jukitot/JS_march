@@ -1,7 +1,15 @@
 
 let url = new URL(window.location.href);
 let postId = parseInt(url.searchParams.get('postId'))
-console.log(postId);
+console.log(postId)
+
+let buttonMain = document.getElementById('main');
+buttonMain.onclick = function (){
+    location.href = `index.html`;
+}
+
+
+
 
 fetch(`https://jsonplaceholder.typicode.com/posts?postId=${postId}`)
     .then(value => value.json())
@@ -9,6 +17,10 @@ fetch(`https://jsonplaceholder.typicode.com/posts?postId=${postId}`)
         for (let item of value) {
             if (postId === item.id) {
                 console.log(item.id);
+                let buttonBack = document.getElementById('back');
+                buttonBack.onclick = function (){
+                    location.href = `user-details.html?userId=${item.userId}`;
+                }
                 let div = document.createElement('div');
                 let h1 = document.createElement('h1');
                 h1.innerText = `User id: ${item.userId}
@@ -46,6 +58,8 @@ fetch(`https://jsonplaceholder.typicode.com/posts?postId=${postId}`)
                                 div.appendChild(h3)
 
                                 document.body.append(div);
+
+
                             }
                         })
                 }, {once: true})
