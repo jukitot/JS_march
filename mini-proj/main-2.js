@@ -3,7 +3,6 @@ let url = new URL(window.location.href);
 let userId = parseInt(url.searchParams.get('userId'))
 console.log(userId);
 
-
 fetch('https://jsonplaceholder.typicode.com/users')
     .then(value => value.json())
     .then(value => {
@@ -30,16 +29,9 @@ fetch('https://jsonplaceholder.typicode.com/users')
                 Catch Phrase: ${item.company.catchPhres}
                 BS: ${item.company.bs}`;
 
-
-
-
-
-
                 let a = document.createElement('a');
                 a.innerText = `Site: ${item.website}`
                 a.href = `http://${item.website}`
-
-
 
                 let button = document.createElement('button');
                 button.innerText = `Post of current user`;
@@ -64,7 +56,6 @@ fetch('https://jsonplaceholder.typicode.com/users')
                                 }
                                 div.appendChild(button);
                                 document.body.append(div);
-
                             }
                         })
                 }, {once: true})
@@ -78,7 +69,6 @@ fetch('https://jsonplaceholder.typicode.com/users')
                 document.body.append(div);
             }
         }
-
     })
 
 
