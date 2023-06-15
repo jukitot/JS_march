@@ -7,7 +7,6 @@ let buttonMain = document.getElementById('main');
 buttonMain.onclick = function (){
     location.href = `index.html`;
 }
-
 fetch(`https://jsonplaceholder.typicode.com/posts?postId=${postId}`)
     .then(value => value.json())
     .then(value => {
@@ -38,11 +37,6 @@ fetch(`https://jsonplaceholder.typicode.com/posts?postId=${postId}`)
                     fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
                         .then(value => value.json())
                         .then(value => {
-
-
-
-
-
                             for (let item of value) {
 
                                 let div = document.createElement('div');
@@ -66,11 +60,8 @@ fetch(`https://jsonplaceholder.typicode.com/posts?postId=${postId}`)
 
                                 container.appendChild(div);
                                 document.body.append(container);
-
-
                             }
                         })
-
                 }, {once: true}
                 )
                 div.appendChild(h1);
